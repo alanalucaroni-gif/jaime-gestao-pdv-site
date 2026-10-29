@@ -1,0 +1,3 @@
+export const builderIngredients = { salgado: ['Carne moída','Frango','Calabresa','Bacon','Doritos','Queijo prato','Requeijão','Champignon','Cheddar','Muçarela','Batata palha','Brócolis','Cebola roxa','Tomate cereja'], doce: ['Chocolate com avelã','Chocolate branco','Chocolate meio amargo','Frutas vermelhas','Suspiro','Farofa de Oreo','Kit Kat','Ovomaltine','Leite em pó','Nuts','Morango','Confete'] };
+export type CustomCrepe = { type: 'salgado' | 'doce'; dough: 'Tradicional' | 'Chocolate'; ingredients: string[]; note: string };
+export const customPrice = (custom: CustomCrepe) => (custom.type === 'doce' ? 18 : 25) + custom.ingredients.length * 5;

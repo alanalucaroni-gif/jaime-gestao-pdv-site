@@ -1,0 +1,15 @@
+services:
+  jaime:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      NODE_ENV: production
+      COMMERCE_DB_PATH: /app/data/jaime.sqlite
+    volumes:
+      - jaime-data:/app/data
+    restart: unless-stopped
+volumes:
+  jaime-data:

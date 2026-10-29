@@ -1,0 +1,16 @@
+import {useEffect,useState} from 'react';
+import tariffs from '../../../shared/imperial-delivery-tariffs.json';
+export default function DeliverySettings({tableOnly=false}:{tableOnly?:boolean}){
+ const [config,setConfig]=useState({enabled:false,origin:'',bands:[] as {upToKm:number;price:number}[],mapsEnabled:false});
+ const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[loaded,setLoaded]=useState(false);
+ useEffect(()=>{fetch('/api/direct/delivery-settings').then(async r=>{if(!r.ok)throw new Error('Não foi possível carregar as configurações.');setConfig(await r.json());setLoaded(true)}).catch(e=>setMessage(e.message))},[]);
+ return <section>{!tableOnly&&<form className="erp-form" onSubmit={async e=>{e.preventDefault();setBusy(true);setMessage('');try{const r=await fetch('/api/direct/delivery-settings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(config)});const data=await r.json();if(!r.ok)throw new Error(data.error);setMessage('Faixas salvas.');}catch(e){setMessage((e as Error).message)}finally{setBusy(false)}}}>
+ <h2>Quanto o cliente paga pela entrega</h2><p>Cadastre o endereço da loja e quanto cobrar em cada faixa de distância pela rua. Atendemos somente Poços de Caldas/MG. Acima da última faixa, a entrega não será aceita.</p>
+ <p>{config.mapsEnabled?'Google Maps conectado.':'O cálculo está aguardando a configuração do Google Maps.'}</p>
+ <label>1. Endereço da J’aime (rua, número e bairro)<input required value={config.origin} onChange={e=>setConfig({...config,origin:e.target.value})}/></label>
+ {config.bands.map((b,i)=><fieldset key={i}><legend>Faixa {i+1}</legend><label>Até (km)<input required type="number" min="0.001" step="0.001" value={b.upToKm||''} onChange={e=>setConfig({...config,bands:config.bands.map((v,j)=>j===i?{...v,upToKm:Number(e.target.value)}:v)})}/></label><label>Taxa (R$)<input required type="number" min="0" step="0.01" value={b.price} onChange={e=>setConfig({...config,bands:config.bands.map((v,j)=>j===i?{...v,price:Number(e.target.value)}:v)})}/></label><button type="button" onClick={()=>setConfig({...config,bands:config.bands.filter((_,j)=>i!==j)})}>Remover faixa</button></fieldset>)}
+ <button type="button" onClick={()=>setConfig({...config,bands:[...config.bands,{upToKm:0,price:0}]})}>2. Adicionar faixa de distância</button>
+ <label><input type="checkbox" checked={config.enabled} onChange={e=>setConfig({...config,enabled:e.target.checked})}/> 3. Usar essas taxas no cardápio</label>
+ <button disabled={busy||!loaded}>{busy?'Salvando…':'Salvar faixas'}</button><p role="status">{message}</p>
+ </form>}{tableOnly&&<details open><summary>Tabela Imperial: Moto City e Zupt ({tariffs.neighborhoods.length} localidades)</summary><p>Valores de referência importados do código Imperial. O custo combinado do entregador é lançado separadamente da taxa do cliente.</p><div style={{maxHeight:400,overflow:'auto'}}><table><thead><tr><th>Bairro/localidade</th><th>Moto City</th><th>Zupt</th></tr></thead><tbody>{tariffs.neighborhoods.map((r,i)=><tr key={i}><td>{r.bairro}</td><td>R$ {r.valores['Moto City']?.toFixed(2) ?? 'Não cadastrado'}</td><td>R$ {r.valores.Zupt?.toFixed(2) ?? 'Não cadastrado'}</td></tr>)}</tbody></table></div></details>}</section>
+}

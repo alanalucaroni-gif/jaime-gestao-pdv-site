@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "path": "/", "title": "J'aime Creperia — Gestão" },
+    { "path": "/loja", "title": "J'aime Creperia — Cardápio" },
+    { "path": "/cotacao/:token", "title": "J'aime Creperia — Responder cotação" }
+  ]
+}

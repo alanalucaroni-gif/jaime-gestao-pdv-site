@@ -1,0 +1,1324 @@
+{
+  "source": "alanalucaroni-gif/imperialparma",
+  "revision": "3d89947a473176e30fefa660e873d146737fbdd3",
+  "description": "Tabela inicial do código Imperial Parma. Custos por transportadora; não ativada como tarifa ao cliente.",
+  "neighborhoods": [
+    {
+      "bairro": "ACACIAS JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "AEROPORTO JD.",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "ALCOA (PORTARIA)",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "ALCOA(CLUBE)",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "ALTO DA BELA VISTA",
+      "valores": {
+        "Moto City": 24,
+        "Zupt": 25
+      }
+    },
+    {
+      "bairro": "AMARILLYS JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "AMÉRICA JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "ANHAGUERA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "APARECIDA",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "AUGUSTO ALMEIDA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "AZALÉIAS JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "BANDEIRANTES JD.",
+      "valores": {
+        "Moto City": 13,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "BELA VISTA",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "BELVEDERE",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "BEM BASTOS",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "BIANUCCI",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "BOA ESPERANÇA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "BORTOLAN",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "BRASIL JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "CACHOEIRINHA",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 20
+      }
+    },
+    {
+      "bairro": "CAIO JUNQUEIRA",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "CAMPO AROEIRAS",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "CAMPO CACHOEIRA",
+      "valores": {
+        "Moto City": 30,
+        "Zupt": 30
+      }
+    },
+    {
+      "bairro": "CAMPO DAS ANTAS",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "CAMPOS ELÍSEOS",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "CAROLINA JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "CARRETÃO",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 21
+      }
+    },
+    {
+      "bairro": "CASCATA DAS ANTAS",
+      "valores": {
+        "Moto City": 25,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "CASCATINHA",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "CASSINO",
+      "valores": {
+        "Moto City": 27,
+        "Zupt": 27
+      }
+    },
+    {
+      "bairro": "CBA",
+      "valores": {
+        "Moto City": 28,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "CEMITÉRIO PARQUE",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "CENTENÁRIO",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "CENTREVILLE",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "CENTRO",
+      "valores": {
+        "Moto City": 8,
+        "Zupt": 8
+      }
+    },
+    {
+      "bairro": "CHAC. ALVORADA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "CHAC. DOS CRAVOS",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "CHAC. POÇ. CALDAS",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "CHAC. S. FRANCISCO",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 25
+      }
+    },
+    {
+      "bairro": "CHAC. STA BÁRBARA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "CHAC. STO. ANTÔNIO",
+      "valores": {
+        "Moto City": 27,
+        "Zupt": 28
+      }
+    },
+    {
+      "bairro": "COLINAS DO SUL",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "COLINAS JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "CONJ. HABITACIONAL",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "CONTORNO JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "CORREGO DANTAS",
+      "valores": {
+        "Moto City": 30,
+        "Zupt": 30
+      }
+    },
+    {
+      "bairro": "COUNTRY CLUB",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "CRISTO",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 16
+      }
+    },
+    {
+      "bairro": "CURIMBABA MIN",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "DANIELE JD.",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "DANONE",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "DANONE BABY",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "DEL REY JD.",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "DIST. INDUSTRIAL",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "DOM BOSCO",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "DR OTTONI",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "ELISABETH JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "ELVIRA DIAS",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "ESMERALDA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "EST.P.DE CALDAS",
+      "valores": {
+        "Moto City": 16,
+        "Zupt": 16
+      }
+    },
+    {
+      "bairro": "EST.SÃO JOSÉ",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "ESTADOS JD.",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "EUROPA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "FAZENDA",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "FERRERO",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "FILIPINO JD.",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "FLORENZA JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "FORMOSA JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "FRIGONOSSA",
+      "valores": {
+        "Moto City": 30,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "FROOTY",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "FUNCIONÁRIOS",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "FURNAS",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "GAMA CRUZ",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "GINÁSIO JD.",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "GOLDEN",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "GOLF CLUB",
+      "valores": {
+        "Moto City": 35,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "GREENVILLE",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "HORTÊNCIA JD",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "IF SUL DE MINAS",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "INB",
+      "valores": {
+        "Moto City": 30,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "IPÊ JD.",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "ITAMARATY 1,2,3,4",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "ITAMARATY 5",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 19
+      }
+    },
+    {
+      "bairro": "JOSÉ CARLOS",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "KENNEDY",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "LORENZETTI",
+      "valores": {
+        "Moto City": 25,
+        "Zupt": 25
+      }
+    },
+    {
+      "bairro": "M.DOS PÁSSAROS",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "MANACÁS",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "MARÇAL SANTOS",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "MARCO DIVISÓRIO",
+      "valores": {
+        "Moto City": 38,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "MARGARITA MORALES",
+      "valores": {
+        "Moto City": 20,
+        "Zupt": 19
+      }
+    },
+    {
+      "bairro": "MARIA IMACULADA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "MG FIBRAS",
+      "valores": {
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "MONJOLINHO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "MONREALE",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "MONTE ALMO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "MONTE VERDE",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "MOR. DAS FLORES",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "MORUMBI",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "NASCENTES DA SERRA",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "NEONUTRI",
+      "valores": {
+        "Moto City": 32,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "NOTRE DAME",
+      "valores": {
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "NOVA APARECIDA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "NOVA AURORA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "NOVO MUNDO JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "PARAÍSO JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "PHELPS / PRYSMIAN",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "PHILADELPHIA JD.",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "PLANALTO JD.",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "POÇOS DE CALDAS",
+      "valores": {
+        "Moto City": 16
+      }
+    },
+    {
+      "bairro": "POL. RODOVIÁRIA",
+      "valores": {
+        "Zupt": 28
+      }
+    },
+    {
+      "bairro": "PQ. DAS NAÇÕES",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "PQ. ESPERANÇA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "PQ. PINHEIROS",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "PQ. SAN CARLO",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "PRAIA DO SOL (BAIRRO)",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 25
+      }
+    },
+    {
+      "bairro": "PRAIA DO SOL (HOTEL)",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "PRIMAVERA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "PUC",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "QUISSISANA JD.",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "R. CAMPO ALEGRE",
+      "valores": {
+        "Moto City": 35,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "R. COLINAS SUL",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "R. MANTIQUEIRA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "REGINA JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "RES GREEN VILLE",
+      "valores": {
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "RES. BERNARDO",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "RES. PAINEIRAS",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "RES. PITANGUEIRAS",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "RES. SUMMER VILLE",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "RES. TORRE",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "RES. VEREDAS",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "RODOVIÁRIA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "SANTA ÂNGELA",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SANTA AUGUSTA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SANTA CASA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SANTA CLARA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "SANTA EMÍLIA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SANTA HELENA",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SANTA LÚCIA (BAIRRO)",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SANTA LÚCIA (EMPRESA)",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "SANTA MARGARIDA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SANTA MARIA",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SANTA RITA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SANTA ROSÁLIA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "SANTA TEREZA",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SANTO ANDRÉ",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SÃO BENEDITO",
+      "valores": {
+        "Moto City": 9,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SÃO BENTO",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "SÃO CONRADO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SÃO DOMINGOS",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SÃO GERALDO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "SÃO JOÃO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SÃO JORGE",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SÃO JOSÉ",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "SÃO PAULO",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "SÃO SEBASTIÃO",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 19
+      }
+    },
+    {
+      "bairro": "SHOPPING",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "TAXA MÁQUININHA",
+      "valores": {
+        "Moto City": 1,
+        "Zupt": 1
+      }
+    },
+    {
+      "bairro": "THERMAS",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "TIRADENTES",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "TREVO POLÍCIA",
+      "valores": {
+        "Moto City": 22,
+        "Zupt": 22
+      }
+    },
+    {
+      "bairro": "UNICESUMAR",
+      "valores": {
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "UNIFAL",
+      "valores": {
+        "Moto City": 28,
+        "Zupt": 35
+      }
+    },
+    {
+      "bairro": "UNIFENAS",
+      "valores": {
+        "Moto City": 18,
+        "Zupt": 18
+      }
+    },
+    {
+      "bairro": "UNIMED",
+      "valores": {
+        "Moto City": 13,
+        "Zupt": 13
+      }
+    },
+    {
+      "bairro": "UPA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "VALE DAS ANTAS",
+      "valores": {
+        "Moto City": 16,
+        "Zupt": 17
+      }
+    },
+    {
+      "bairro": "VALE DO SOL",
+      "valores": {
+        "Moto City": 30,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "VARANDAS DO SOL",
+      "valores": {
+        "Moto City": 25,
+        "Zupt": 25
+      }
+    },
+    {
+      "bairro": "VÉU DAS NOIVAS",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 15
+      }
+    },
+    {
+      "bairro": "VILA CRUZ",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 11
+      }
+    },
+    {
+      "bairro": "VILA FLORA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VILA GUAPORÉ",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VILA LÍDER",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "VILA MATILDE",
+      "valores": {
+        "Moto City": 17,
+        "Zupt": 19
+      }
+    },
+    {
+      "bairro": "VILA MENEZES",
+      "valores": {
+        "Moto City": 11,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VILA NOVA",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "VILA OLÍMPICA",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "VILA RABELO",
+      "valores": {
+        "Moto City": 26,
+        "Zupt": 26
+      }
+    },
+    {
+      "bairro": "VILA RICA",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VILA TOGNI",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "VILLAGE",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "VILLAGE SÃO LUIZ",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VILLE DE FRANCE",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "VITÓRIA JD.",
+      "valores": {
+        "Moto City": 12,
+        "Zupt": 12
+      }
+    },
+    {
+      "bairro": "VIVALDI LEITE",
+      "valores": {
+        "Moto City": 10,
+        "Zupt": 10
+      }
+    },
+    {
+      "bairro": "WALTER WORD",
+      "valores": {
+        "Moto City": 14,
+        "Zupt": 14
+      }
+    },
+    {
+      "bairro": "YORIN",
+      "valores": {
+        "Moto City": 28,
+        "Zupt": 32
+      }
+    },
+    {
+      "bairro": "ZONA LESTE",
+      "valores": {
+        "Moto City": 15,
+        "Zupt": 15
+      }
+    }
+  ]
+}
