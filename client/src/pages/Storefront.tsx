@@ -3,7 +3,7 @@ import { builderIngredients } from "@shared/custom-crepe";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Minus, Plus, ShoppingBag, Store, Truck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { loadMenu, type MenuProduct } from "@/data/menu";
+import { initialMenu, type MenuProduct } from "@shared/catalog";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
@@ -27,7 +27,7 @@ const imageFor = (name: string) => `/menu-images/${slug(name)}.webp`;
 
 export default function Storefront() {
   const [tab, setTab] = useState<Category>("Todos");
-  const [products, setProducts] = useState<Product[]>(loadMenu);
+  const [products, setProducts] = useState<Product[]>(initialMenu);
   const [cart, setCart] = useState<CartLine[]>(() => { try { const saved = JSON.parse(sessionStorage.getItem("jaime-cart") || "[]"); return Array.isArray(saved) ? saved.filter(x => Number.isInteger(x.quantity) && x.quantity > 0 && Number.isFinite(x.price)) : []; } catch { return []; } });
   useEffect(() => { try { sessionStorage.setItem("jaime-cart", JSON.stringify(cart)); } catch {} }, [cart]);
   const [bagOpen, setBagOpen] = useState(false);
@@ -59,6 +59,9 @@ export default function Storefront() {
   return <div className="original-menu">
     <header className="original-header"><a className="original-back" href="/">← Início</a><a className="original-logo" href="/loja" aria-label="J'aime Creperia"><img src="/assets/original-01.png" alt="J'aime Creperia" /></a><button className="original-pill" onClick={() => setBagOpen(true)}>Sacola {count ? `(${count})` : ""}</button><button className="checkout-secondary" onClick={() => setCheckoutOpen(true)}>Meu pedido</button></header>
     <main className="original-main"><h1>Cardápio</h1><p className="original-sub">Feito na hora, do nosso jeito. Escolha seus crepes e envie o pedido direto para a loja.</p><div className="original-tabs">{tabs.map(item => <button key={item.value} aria-pressed={tab === item.value} onClick={() => setTab(item.value)}>{item.label}</button>)}</div>
+      {menuQuery.isLoading && <p role="status">Carregando cardápio…</p>}
+      {menuQuery.error && <p role="alert">Não foi possível carregar o cardápio. Atualize a página para tentar novamente.</p>}
+      {!menuQuery.isLoading && !menuQuery.error && !products.length && <p role="status">Cardápio em atualização. Volte em breve.</p>}
       {tab === "Monte" ? <CustomBuilder onAdd={add} /> : groups.map(group => { const items = visible.filter(product => product.category === group); if (!items.length) return null; return <section className="original-section" key={group}><h2>{categoryTitles[group]}</h2>{group === "Bebida" ? <div className="original-drink-list">{items.map(product => <OriginalDrink product={product} onAdd={add} key={product.id} />)}</div> : <div className="original-cards">{items.map(product => <OriginalCard product={product} onAdd={add} key={product.id} />)}</div>}</section>; })}
     </main>
     <button className={`original-bag ${count ? "on" : ""}`} onClick={() => setBagOpen(true)}><span>{count} {count === 1 ? "item" : "itens"} · {formatCurrency(linesTotal)}</span><strong>Ver sacola</strong></button>

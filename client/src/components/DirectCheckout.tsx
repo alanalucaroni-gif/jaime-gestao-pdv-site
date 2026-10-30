@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import type { MenuProduct } from '@/data/menu';
+import type { MenuProduct } from '@shared/catalog';
 
 type OrderView = { publicId: string; token?: string; status: string; paymentStatus: string; paymentMethod: string; total: string; qrCode?: string; qrImage?: string };
 type Config = { routeDelivery: boolean; deliveryAvailable: boolean; online: boolean; publicKey: string; deliveryFee: number | null };

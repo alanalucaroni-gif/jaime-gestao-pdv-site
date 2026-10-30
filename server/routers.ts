@@ -1,3 +1,6 @@
+import { financialInput, financialOverview, createFinancial, settleInput, settleFinancial, reasonInput, reverseSettlement, cancelFinancial } from './financial';
+import { productionRecipes, productionBatches, productionRecipeInput, saveProductionRecipe, productionBatchInput, previewProduction, produceBatch } from './production';
+import { exportStockCount, stockCountInput, previewStockCount, importStockCountInput, importStockCount } from './stock-count';
 import { cashInput, cashOverview, recordCash } from './cash';
 import {movementSchema,recordMovement} from "./inventory";
 import {dispatchPurchasePdfs} from "./purchase-pdf";
@@ -56,6 +59,25 @@ export const appRouter = router({
       items: z.array(z.object({ productId: z.number().int().positive().optional(), name: z.string(), quantity: z.number().int().positive(), unitPrice: z.string(), observations: z.string().max(2000).optional() })).min(1),
     })).mutation(({ input }) => createOrderRecord({ ...input, publicId: `JA-${crypto.randomUUID().slice(0, 8).toUpperCase()}` })),
     updateStatus: publicProcedure.input(z.object({ publicId: z.string().max(40), status: z.enum(["analysis", "production", "ready", "completed", "cancelled"]) })).mutation(({ input }) => changeOrderStatus(input.publicId,input.status)),
+  }),
+  financial: router({
+    overview: publicProcedure.query(financialOverview),
+    create: publicProcedure.input(financialInput).mutation(({ input }) => createFinancial(input)),
+    settle: publicProcedure.input(settleInput).mutation(({ input }) => settleFinancial(input)),
+    reverse: publicProcedure.input(reasonInput).mutation(({ input }) => reverseSettlement(input)),
+    cancel: publicProcedure.input(reasonInput).mutation(({ input }) => cancelFinancial(input)),
+  }),
+  production: router({
+    recipes: publicProcedure.query(productionRecipes),
+    saveRecipe: publicProcedure.input(productionRecipeInput).mutation(({ input }) => saveProductionRecipe(input)),
+    batches: publicProcedure.query(productionBatches),
+    preview: publicProcedure.input(productionBatchInput.omit({ requestId: true, note: true })).query(({ input }) => previewProduction(input)),
+    produce: publicProcedure.input(productionBatchInput).mutation(({ input }) => produceBatch(input)),
+  }),
+  stockCount: router({
+    export: publicProcedure.query(exportStockCount),
+    preview: publicProcedure.input(stockCountInput).mutation(({ input }) => previewStockCount(input)),
+    import: publicProcedure.input(importStockCountInput).mutation(({ input }) => importStockCount(input)),
   }),
   cash: router({overview:publicProcedure.query(cashOverview),record:publicProcedure.input(cashInput).mutation(({input})=>recordCash(input))}),
   logistics: router({

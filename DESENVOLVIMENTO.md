@@ -61,3 +61,15 @@ Receber pedido vinculado a insumos gera entrada atômica e idempotente. Cotaçõ
 PDF de compra é gerado por pedido em /api/purchases/pdf/:token, com token privado aleatório. O envio é disparado ao finalizar seleção. Requer PUBLIC_URL HTTPS e WHATSAPP_ACCESS_TOKEN, WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_GRAPH_VERSION, WHATSAPP_PURCHASE_TEMPLATE. Template aprovado pt_BR, cabeçalho DOCUMENT, corpo fixo sem parâmetros. Credenciais nunca vão ao navegador. Ausência de configuração é exibida; resposta OK do provedor significa aceitação, não comprovação de entrega. Timeout fica incerto e não é repetido automaticamente para evitar duplicatas. Nenhuma mensagem real foi enviada nos testes.
 
 Testes: 23 aprovados, TypeScript e build. PDF exemplo renderizado e inspecionado. UI estoque/fichas conferida. WhatsApp real pendente de credenciais, template aprovado e publicação.
+
+## Retaguarda — produção, contagem e financeiro
+
+Detalhes de observação, decisões de implementação e pendências em `docs/retaguarda-sischef.md`.
+
+- **Produção de lotes**: cadastre receitas que transformam ingredientes em um insumo preparado; prévia de consumo, perdas e registro atômico com histórico. Use o insumo preparado na composição da venda para evitar baixar matéria-prima novamente.
+- **Estoque > Contagem de estoque por CSV**: exporte, preencha contagem, confira e aplique. Saldo alterado depois da exportação bloqueia a importação; nova contagem é necessária.
+- **A pagar e receber**: títulos manuais com parcelas mensais, baixas parciais, juros/descontos, estorno e vínculo com o fluxo de caixa. Não movimenta dinheiro em bancos, nem gera títulos automáticos para compras/vendas.
+
+O arquivo original `client/src/data/menu.ts` não estava versionado. `shared/catalog.ts` passa a ser o contrato; o seed é vazio até recuperar o original ou cadastrar produtos. Dados de produtos existentes no SQLite são preservados. Fixtures de teste nunca populam o banco de produção. A regra `.gitignore` agora ignora somente `/data/`, sem ocultar código em subpastas.
+
+Validação: 42 testes, TypeScript e build aprovados. Revisão visual das novas telas ainda pendente. Emissão fiscal, integração bancária, DRE/DFC, XML de entrada e paridade completa com o Sischef não fazem parte desta alteração.

@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { z } from 'zod';
-import { initialMenu } from '../client/src/data/menu';
+import { initialMenu } from '../shared/catalog';
 
 export const orderInput = z.object({
   requestId: z.string().uuid(), customerName: z.string().trim().min(2).max(160),

@@ -113,7 +113,7 @@ temp/
 client/public/__manus__/version.json
 
 # Dados privados de pedidos
-data/
+/data/
 *.sqlite-wal
 *.sqlite-shm
 

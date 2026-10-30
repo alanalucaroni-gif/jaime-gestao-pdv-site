@@ -1,3 +1,6 @@
+import Financial from '@/components/Financial';
+import ProductionBatches from '@/components/ProductionBatches';
+import '@/backoffice.css';
 import CashFlow from '@/components/CashFlow';
 import Inventory from "@/components/Inventory";
 import PurchaseComparison from "@/components/PurchaseComparison";
@@ -39,9 +42,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { loadMenu, saveMenu, type MenuProduct } from "@/data/menu";
+import { initialMenu, type MenuProduct } from "@shared/catalog";
 
-type Section = "pos" | "overview" | "orders" | "menu" | "stock" | "production" | "delivery" | "payments" | "integrations" | "finance" | "suppliers";
+type Section = "pos" | "overview" | "orders" | "menu" | "stock" | "production" | "delivery" | "payments" | "integrations" | "finance" | "suppliers" | "financial" | "batches";
 type OrderStatus = "analysis" | "production" | "ready" | "completed";
 type Order = {
   id: string;
@@ -78,7 +81,9 @@ const sections: Array<{ id: Section; label: string; icon: typeof LayoutDashboard
   { id: "menu", label: "Cardápio", icon: UtensilsCrossed },
   { id: "stock", label: "Estoque", icon: Boxes },
   { id: "suppliers", label: "Fornecedores", icon: Handshake },
-  { id: "production", label: "Fichas de produção", icon: ClipboardList },
+  { id: "production", label: "Composição de venda", icon: ClipboardList },
+  { id: "batches", label: "Produção de lotes", icon: PackageCheck },
+  { id: "financial", label: "A pagar e receber", icon: CreditCard },
   { id: "delivery", label: "Motoboys e taxas", icon: Bike },
   { id: "payments", label: "Pagamentos", icon: WalletCards },
   { id: "integrations", label: "Integrações", icon: Link2 },
@@ -247,7 +252,7 @@ export default function Home({ area = "backoffice" }: { area?: "backoffice" | "p
   const areaSections = sections.filter(section => isPOS ? ["orders", "pos", "delivery", "finance"].includes(section.id) : !["orders", "pos"].includes(section.id));
   const [activeSection, setActiveSection] = useState<Section>(isPOS ? "orders" : "overview");
   const [orders, setOrders] = useState<Order[]>([]);
-  const [products, setProducts] = useState<Product[]>(loadMenu);
+  const [products, setProducts] = useState<Product[]>(initialMenu);
   const inventoryQuery = trpc.inventory.list.useQuery(undefined,{refetchInterval:10000});
   const stock:StockItem[]=(inventoryQuery.data??[]).map(i=>({...i,detail:"Estoque real",status:i.current<i.minimum?"low":"ok"}));
   const [productionSheets, setProductionSheets] = useState(initialProductionSheets);
@@ -260,7 +265,7 @@ export default function Home({ area = "backoffice" }: { area?: "backoffice" | "p
   useEffect(() => {
     if (menuQuery.data?.length) {
       const menu = menuQuery.data.map(item => ({ id: item.id, name: item.name, category: item.category as Product["category"], description: item.description, price: Number(item.price), available: item.available === 1, accent: item.accent }));
-      setProducts(menu); saveMenu(menu);
+      setProducts(menu);
     }
   }, [menuQuery.data]);
   const ordersQuery = trpc.orders.list.useQuery(undefined, { refetchInterval: 10_000, staleTime: 5_000 });
@@ -325,7 +330,6 @@ export default function Home({ area = "backoffice" }: { area?: "backoffice" | "p
   const toggleProduct = (id: number) => {
     setProducts(current => {
       const updated = current.map(product => product.id === id ? { ...product, available: !product.available } : product);
-      saveMenu(updated);
       persistMenu(updated);
       return updated;
     });
@@ -339,7 +343,6 @@ export default function Home({ area = "backoffice" }: { area?: "backoffice" | "p
     const product = products.find(item => item.id === id);
     setProducts(current => {
       const updated = current.map(product => product.id === id ? { ...product, price } : product);
-      saveMenu(updated);
       persistMenu(updated);
       return updated;
     });
@@ -401,6 +404,8 @@ export default function Home({ area = "backoffice" }: { area?: "backoffice" | "p
           {activeSection === "payments" && <PaymentsPage settings={paymentSettings} onToggle={togglePayment} onProviderChange={provider => setPaymentSettings(current => ({ ...current, onlineProvider: provider, onlineEnabled: provider !== "Não conectado" }))} onToggleOnline={() => setPaymentSettings(current => ({ ...current, onlineEnabled: !current.onlineEnabled }))} />}
           {activeSection === "integrations" && <IntegrationsPage integrations={integrations} onConnect={connectIntegration} />}
           {activeSection === "finance" && <CashFlow />}
+          {activeSection === "financial" && <Financial />}
+          {activeSection === "batches" && <ProductionBatches />}
           {activeSection === "suppliers" && <SuppliersPage stock={stock} />}
         </main>
       </div>
