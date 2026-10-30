@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Dialog,DialogContent,DialogHeader,DialogTitle,DialogDescription } from '@/components/ui/dialog';
-import type { MenuProduct } from '@/data/menu';
+import type { MenuProduct } from '@shared/catalog';
 const money=(n:number)=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 async function request(url:string,body?:unknown){const r=await fetch(url,body?{method:url.endsWith('products')?'PUT':'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);const data=await r.json();if(!r.ok)throw new Error(data.error||'Falha ao salvar');return data;}
 export default function CatalogPOS({mode}:{mode:'catalog'|'pos'}){

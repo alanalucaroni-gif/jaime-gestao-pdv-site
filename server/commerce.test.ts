@@ -1,3 +1,4 @@
+import { seedTestCatalog } from './test-catalog';
 import { saveProduct, createSale } from "./catalog";
 import { beforeAll, afterAll, describe, expect, it } from 'vitest';
 import fs from 'node:fs';
@@ -7,7 +8,7 @@ import crypto from 'node:crypto';
 import { newOrder, findOrder, commerceDb } from './commerce-store';
 import { applyPayment, validWebhook, adminAccess } from './commerce';
 const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'jaime-test-'));
-beforeAll(() => { process.env.COMMERCE_DB_PATH = path.join(directory, 'test.sqlite'); process.env.MP_MODE = 'test'; });
+beforeAll(() => { process.env.COMMERCE_DB_PATH = path.join(directory, 'test.sqlite'); process.env.MP_MODE = 'test'; seedTestCatalog(); });
 afterAll(() => { commerceDb().close(); fs.rmSync(directory, { recursive: true, force: true }); delete process.env.COMMERCE_DB_PATH; delete process.env.MP_MODE; });
 function input() { return { requestId: crypto.randomUUID(), customerName: 'Cliente Teste', phone: '11999999999', address: 'Rua de teste, 123', deliveryType: 'delivery', paymentMethod: 'offline', items: [{ productId: 1, quantity: 2 }] }; }
 describe('Pedidos diretos', () => {

@@ -1,0 +1,197 @@
+.backoffice-page {
+  max-width: 1400px;
+  margin: auto;
+  color: #263d32;
+}
+.backoffice-page h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.04em;
+  margin: 0.4rem 0;
+}
+.backoffice-page h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+.backoffice-page p,
+.stock-count-panel p {
+  line-height: 1.6;
+}
+.backoffice-card,
+.stock-count-panel {
+  padding: 24px;
+  margin: 20px 0;
+  border: 1px solid #dce3da;
+  border-radius: 16px;
+  background: #fff;
+}
+.backoffice-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.backoffice-split .backoffice-card {
+  margin: 0;
+}
+.backoffice-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #e8ece5;
+  padding: 16px 0;
+}
+.backoffice-list-row p {
+  margin: 0.3rem 0;
+  color: #68766b;
+  font-size: 0.86rem;
+}
+.backoffice-page button,
+.stock-count-panel button {
+  border: 1px solid #c6d2c3;
+  border-radius: 8px;
+  background: #f3f5ef;
+  padding: 9px 13px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.backoffice-page button:disabled,
+.stock-count-panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.backoffice-page .purchase-toolbar > button,
+.backoffice-page .erp-form > button[type="submit"],
+.stock-count-panel .erp-form > button {
+  background: #234d38;
+  color: white;
+}
+.backoffice-notice {
+  padding: 14px 18px;
+  background: #f4f0e6;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  border-left: 3px solid #cba55a;
+}
+.backoffice-table-wrap {
+  overflow: auto;
+}
+.backoffice-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  text-align: left;
+}
+.backoffice-table-wrap th {
+  background: #f1f4ed;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #68766b;
+}
+.backoffice-table-wrap th,
+.backoffice-table-wrap td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #e8ece5;
+  vertical-align: top;
+}
+.backoffice-table-wrap td p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: #68766b;
+}
+.backoffice-table-wrap td button {
+  display: block;
+  white-space: nowrap;
+  margin-bottom: 7px;
+}
+.backoffice-table-wrap caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 16px 0;
+}
+.backoffice-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+}
+.backoffice-filters label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.8rem;
+  flex: 1;
+  min-width: 150px;
+}
+.backoffice-filters input,
+.backoffice-filters select,
+.backoffice-actions input {
+  padding: 10px 12px;
+  border: 1px solid #c6d2c3;
+  border-radius: 8px;
+  background: white;
+  min-width: 0;
+  width: 100%;
+}
+.backoffice-filters label:first-child {
+  flex: 2;
+}
+.backoffice-danger {
+  color: #a33026;
+  font-weight: 600;
+}
+.backoffice-fieldset {
+  border: 1px solid #dce3da;
+  border-radius: 10px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+.backoffice-fieldset legend {
+  font-weight: 600;
+  padding: 0 6px;
+  font-size: 0.8rem;
+}
+.backoffice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  margin: 18px 0;
+}
+.backoffice-actions label {
+  display: grid;
+  font-size: 0.8rem;
+  gap: 6px;
+}
+.stock-count-panel summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+.backoffice-page .erp-form label {
+  min-width: 0;
+}
+.backoffice-page .production-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.backoffice-page .production-summary article {
+  min-width: 0;
+}
+@media (max-width: 800px) {
+  .backoffice-split {
+    grid-template-columns: 1fr;
+  }
+  .backoffice-card,
+  .stock-count-panel {
+    padding: 16px;
+  }
+  .backoffice-page .production-summary {
+    grid-template-columns: 1fr;
+  }
+  .backoffice-page .purchase-toolbar {
+    align-items: start;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}

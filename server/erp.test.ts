@@ -1,3 +1,4 @@
+import { seedTestCatalog } from './test-catalog';
 import {stockList,saveRecipe,adjustStock,changeOrderStatus,movements} from "./inventory";
 import {newOrder} from "./commerce-store";
 import crypto from "node:crypto";
@@ -10,7 +11,7 @@ import { commerceDb } from './commerce-store';
 import {createSupplier,listSuppliers,createPurchaseRequest,getPurchaseRequest,getSupplierQuote,submitSupplierQuote,awardSupplierQuote,receivePurchase} from './purchasing-local';
 import {calculateRoute,saveLogisticsConfig,saveDriver,drivers} from './logistics';
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),'jaime-erp-'));
-beforeAll(()=>{process.env.COMMERCE_DB_PATH=path.join(dir,'erp.sqlite')});
+beforeAll(()=>{process.env.COMMERCE_DB_PATH=path.join(dir,'erp.sqlite');seedTestCatalog()});
 afterAll(()=>{commerceDb().close();fs.rmSync(dir,{recursive:true,force:true});delete process.env.COMMERCE_DB_PATH;delete process.env.GOOGLE_MAPS_API_KEY;vi.unstubAllGlobals()});
 it('persiste fornecedor e edição sem criar duplicado',()=>{const s=createSupplier({name:'Fornecedor teste',whatsapp:'35999999999',category:'Laticínios'});createSupplier({...s,contact:'Ana'});expect(listSuppliers()).toHaveLength(1);expect(listSuppliers()[0].contact).toBe('Ana');});
 it('isola formulário público, calcula quantidade e bloqueia reenvio',()=>{const r=createPurchaseRequest({supplierIds:[listSuppliers()[0].id],items:[{itemName:'Queijo',quantity:'3',unit:'kg'}]});const token=r.quotes[0].token;expect(getSupplierQuote(token)).not.toHaveProperty('request.quotes');expect(()=>submitSupplierQuote({token,items:[{purchaseItemId:999,unitPrice:'10',available:1}]})).toThrow();submitSupplierQuote({token,items:[{purchaseItemId:1,unitPrice:'12.50',available:1}]});expect(getPurchaseRequest(r.publicId)?.quotes[0].total).toBe('37.50');expect(()=>submitSupplierQuote({token,items:[]})).toThrow();awardSupplierQuote(r.quotes[0].id);expect(receivePurchase(r.id).status).toBe('received');expect(receivePurchase(r.id).status).toBe('received');});
